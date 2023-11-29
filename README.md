@@ -1,6 +1,6 @@
 # todoapp
 
-A new Flutter project.
+"I developed a user-friendly todo application that streamlines task management. This app enables users to effortlessly add, delete, and search tasks, providing a seamless experience for organizing and tracking daily activities. Its intuitive interface promotes efficient task management, enhancing productivity and user satisfaction."
 
 ## Getting Started
 

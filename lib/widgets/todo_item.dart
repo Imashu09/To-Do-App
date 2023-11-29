@@ -3,6 +3,7 @@ import 'package:todoapp/model/todo.dart';
 
 class ToDoItem extends StatelessWidget {
   final ToDo todo;
+  // ignore: prefer_typing_uninitialized_variables
   final onToDoChanged;
   final onDeleteItem;
      ToDoItem({super.key,required this.todo, required this.onToDoChanged,required this.onDeleteItem});
@@ -19,7 +20,7 @@ class ToDoItem extends StatelessWidget {
         shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20)),
         tileColor: Colors.white,
-        contentPadding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20,vertical: 5),
         leading: Icon( todo.isDone?  Icons.check_box :Icons.check_box_outline_blank,color: Colors.blue,),
         title: Text(todo.todoText!,style: TextStyle(
           color: Colors.black,
@@ -31,15 +32,15 @@ class ToDoItem extends StatelessWidget {
        trailing: Container(
         height: 35,
         width: 35,
-        padding: EdgeInsets.all(0),
-        margin: EdgeInsets.symmetric(horizontal: 7,vertical: 8),
+        padding: const EdgeInsets.all(0),
+        margin: const EdgeInsets.symmetric(horizontal: 7,vertical: 8),
         decoration: BoxDecoration(
           color: Colors.red,
           borderRadius: BorderRadius.circular(4)
         ),
         child: IconButton(
           color: Colors.white,
-          icon: Icon(Icons.delete_forever),
+          icon: const Icon(Icons.delete_forever),
           iconSize: 18,
           onPressed: (){
               onDeleteItem(todo.id);
@@ -50,5 +51,10 @@ class ToDoItem extends StatelessWidget {
       ),
       
     );
+  }
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('onToDoChanged', onToDoChanged));
   }
 }
